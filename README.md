@@ -37,9 +37,25 @@ Import project in an editor
 ## Run from Postman
 
 1) API for creating new Address book : http://localhost:8080/contactAddressBook/createAddressBook (POST method)
+   JSON Request Body :
+   {
+    "addressBookName": "ADDRESSBOOK_1"
+   }
 2) API for creating new contact : http://localhost:8080/contactAddressBook/createContact (POST method)
+   JSON Request Body :
+   {
+    "fullName": "Bob",
+    "phoneNumber": "57575",
+    "addressBookName": "ADDRESSBOOK_1"
+   }
 3) API for displaying contacts with respect to id: http://localhost:8080/contactAddressBook/displayContact (POST method)
-4) API for displaying existing Address Books: http://localhost:8080/contactAddressBook/displayContactsFromAddressBook (POST method)
+    JSON Request Body :
+   {
+    "id": 10
+   }
+   
+4) API for displaying existing Address Books: http://localhost:8080/contactAddressBook/displayAllAddressBooks (GET method)   
+  
 5) API for displaying unique contacts in the address books : http://localhost:8080/contactAddressBook/displayUniqueContacts (GET method)
 
 
