@@ -31,4 +31,11 @@ public class AddressBookEntity {
     public AddressBookEntity(String addressBookName) {
         this.addressBookName = addressBookName;
     }
+
+	@Override
+	public String toString() {
+		return "AddressBookEntity [addressBookName=" + addressBookName + "]";
+	}
+    
+    
 }

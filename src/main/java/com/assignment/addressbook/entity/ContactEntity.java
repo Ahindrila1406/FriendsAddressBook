@@ -73,4 +73,11 @@ public class ContactEntity {
     public void setAddressBookName(String addressBookName) {
         this.addressBookName = addressBookName;
     }
+
+	@Override
+	public String toString() {
+		return "ContactEntity [id=" + id + ", fullName=" + fullName + ", phoneNumber=" + phoneNumber
+				+ ", addressBookName=" + addressBookName + "]";
+	}
+    
 }

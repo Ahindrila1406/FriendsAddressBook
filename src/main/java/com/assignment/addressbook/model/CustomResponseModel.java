@@ -38,4 +38,11 @@ public class CustomResponseModel<T> {
         this.data = data;
         this.errors = errors;
     }
+
+	@Override
+	public String toString() {
+		return "CustomResponseModel [data=" + data + ", errors=" + errors + "]";
+	}
+    
+    
 }

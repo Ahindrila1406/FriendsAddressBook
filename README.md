@@ -58,5 +58,7 @@ Import project in an editor
   
 5) API for displaying unique contacts in the address books : http://localhost:8080/contactAddressBook/displayUniqueContacts (GET method)
 
+## AddressBook Test API Collection
 
+https://elements.getpostman.com/redirect?entityId=31614168-bc8cb5d6-f792-4b9b-bfcf-037c8e361208&entityType=collection
 

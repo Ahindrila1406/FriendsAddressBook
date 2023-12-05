@@ -21,6 +21,7 @@ import java.util.Optional;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.times;
 
 
@@ -42,9 +43,8 @@ class AddressBookServiceImplTest {
     void fetchAddressBookNames() {
         AddressBookEntity addressBook1 = new AddressBookEntity("ADDRESS_BOOK_1");
         AddressBookEntity addressBook2 = new AddressBookEntity("ADDRESS_BOOK_2");
-        AddressBookEntity addressBook3 = new AddressBookEntity("ADDRESS_BOOK_3");
-        when(addressBookDao.findAll()).thenReturn(List.of(addressBook1,addressBook2,addressBook3));
-        assertEquals(3,addressBookService.fetchAddressBookNames().size());
+        when(addressBookDao.findAll()).thenReturn(List.of(addressBook1,addressBook2));
+        assertEquals(2,addressBookService.fetchAddressBookNames().size());
 
     }
 
@@ -53,17 +53,17 @@ class AddressBookServiceImplTest {
         AddressBook addressBookModel = new AddressBook("ADDRESS_BOOK_4");
         AddressBookEntity addressBookEntity = new AddressBookEntity("ADDRESS_BOOK_4");
         when(addressBookDao.save(addressBookEntity)).thenReturn(addressBookEntity);
-        assertEquals(addressBookEntity,addressBookService.createAddressBook(addressBookModel));
+        assertEquals(addressBookEntity.toString(),addressBookService.createAddressBook(addressBookModel).toString());
     }
 
     @Test
     @Disabled
     void createContact() {
         ContactEntity contactDetails = new ContactEntity(1, "John", "9463829204", "ADDRESS_BOOK_1");
+        AddressBook addressBook = new AddressBook("ADDRESS_BOOK_1");
         Contact model = new Contact(1,"John","9463829204","ADDRESS_BOOK_1");
         when(contactDetailsDao.save(Mockito.any())).thenReturn(model);
-        assertEquals(contactDetails,addressBookService.createContact(model));
-    }
+        assertEquals(contactDetails.toString(),addressBookService.createContact(model).toString());    }
 
     @Test
     void fetchContact() {

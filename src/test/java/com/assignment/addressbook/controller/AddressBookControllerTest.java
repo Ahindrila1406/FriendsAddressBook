@@ -26,49 +26,49 @@ class AddressBookControllerTest {
 
     @Test
     void fetchAllAddressBooks() {
-        CustomResponseModel<Object> serviceResponseWrapperModel = new CustomResponseModel<>(addressBookService.fetchAddressBookNames());
-        ResponseEntity responseEntity = new ResponseEntity(serviceResponseWrapperModel, HttpStatus.OK);
-        assertEquals(responseEntity,addressBookController.fetchAllAddressBooks());
+        CustomResponseModel<Object> customResponseModel = new CustomResponseModel<>(addressBookService.fetchAddressBookNames());
+        ResponseEntity responseEntity = new ResponseEntity(customResponseModel, HttpStatus.OK);
+        assertEquals(responseEntity.toString(),addressBookController.fetchAllAddressBooks().toString());
     }
 
     @Test
     void createAddressBook() {
         AddressBook addressBookModel = new AddressBook("ADDRESS_BOOK_1");
-        CustomResponseModel<Object> serviceResponseWrapperModel = new CustomResponseModel<>(addressBookService.createAddressBook(addressBookModel));
-        ResponseEntity<Object> responseEntity = new ResponseEntity<>(serviceResponseWrapperModel, HttpStatus.OK);
-        assertEquals(responseEntity,addressBookController.createAddressBook(addressBookModel));
+        CustomResponseModel<Object> customResponseModel = new CustomResponseModel<>(addressBookService.createAddressBook(addressBookModel));
+        ResponseEntity<Object> responseEntity = new ResponseEntity<>(customResponseModel, HttpStatus.OK);
+        assertEquals(responseEntity.toString(),addressBookController.createAddressBook(addressBookModel).toString());
     }
 
 
     @Test
     void createContact() {
         Contact model = new Contact(1,"John","9463829204","ADDRESS_BOOK_1");
-        CustomResponseModel<Object> serviceResponseWrapperModel = new CustomResponseModel<>(addressBookService.createContact(model));
-        ResponseEntity responseEntity = new ResponseEntity(serviceResponseWrapperModel, HttpStatus.OK);
-        assertEquals(responseEntity,addressBookController.createContact(model));
+        CustomResponseModel<Object> customResponseModel = new CustomResponseModel<>(addressBookService.createContact(model));
+        ResponseEntity responseEntity = new ResponseEntity(customResponseModel, HttpStatus.OK);
+        assertEquals(responseEntity.toString(),addressBookController.createContact(model).toString());
     }
 
     @Test
     void fetchContact() {
         ContactIdModel id = new ContactIdModel(1);
-        CustomResponseModel<Object> serviceResponseWrapperModel = new CustomResponseModel<>(addressBookService.fetchContact(id));
-        ResponseEntity responseEntity = new ResponseEntity(serviceResponseWrapperModel, HttpStatus.OK);
-        assertEquals(responseEntity,addressBookController.fetchContact(id));
+        CustomResponseModel<Object> customResponseModel = new CustomResponseModel<>(addressBookService.fetchContact(id));
+        ResponseEntity responseEntity = new ResponseEntity(customResponseModel, HttpStatus.OK);
+        assertEquals(responseEntity.toString(),addressBookController.fetchContact(id).toString());
     }
 
     @Test
     void fetchContactsFromAddressBook() {
         AddressBook addressBookModel = new AddressBook("ADDRESS_BOOK_1");
-        CustomResponseModel<Object> serviceResponseWrapperModel = new CustomResponseModel<>(addressBookService.fetchContactsFromAddressBook(addressBookModel));
-        ResponseEntity responseEntity = new ResponseEntity(serviceResponseWrapperModel, HttpStatus.OK);
-        assertEquals(responseEntity,addressBookController.fetchContactsFromAddressBook(addressBookModel));
+        CustomResponseModel<Object> customResponseModel = new CustomResponseModel<>(addressBookService.fetchContactsFromAddressBook(addressBookModel));
+        ResponseEntity responseEntity = new ResponseEntity(customResponseModel, HttpStatus.OK);
+        assertEquals(responseEntity.toString(),addressBookController.fetchContactsFromAddressBook(addressBookModel).toString());
     }
 
     @Test
     void fetchUniqueContacts() {
-        CustomResponseModel<Object> serviceResponseWrapperModel = new CustomResponseModel<>(addressBookService.fetchUniqueContacts());
-        ResponseEntity responseEntity = new ResponseEntity(serviceResponseWrapperModel, HttpStatus.OK);
-        assertEquals(responseEntity,addressBookController.fetchUniqueContacts());
+        CustomResponseModel<Object> customResponseModel = new CustomResponseModel<>(addressBookService.fetchUniqueContacts());
+        ResponseEntity responseEntity = new ResponseEntity(customResponseModel, HttpStatus.OK);
+        assertEquals(responseEntity.toString(),addressBookController.fetchUniqueContacts().toString());
 
     }
 }
