@@ -1,7 +1,7 @@
 # Project Title
 
 Address Book Backend
-This project has 3 address books by default with 3 contacts each. 
+This project has 2 address books by default. 
 1) The user can add new contact.
 2) The user can add new AddressBook.
 3) Find unique contacts from each address book. 
