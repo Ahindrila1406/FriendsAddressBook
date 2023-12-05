@@ -23,8 +23,7 @@ Book1 \ Book2 = { “Bob”, “John” }
 
 ## Run Locally
 
-Clone the project
-  git clone https://github.com/Ahindrila1406/FriendsAddressBook.git
+Clone the project -- git clone https://github.com/Ahindrila1406/FriendsAddressBook.git
 
 
 Go to the project directory
