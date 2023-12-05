@@ -1,5 +1,0 @@
-# application.yml
-logging:
-  level:
-    root: INFO
-    com.example: DEBUG
